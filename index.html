@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Acme Product Management</title>
+
+    <!-- Style sheets -->
+    <link href="css/app.css" rel="stylesheet"/>
+
+    <!-- Library Scripts -->
+    <script src="js/angular.js"></script>
+
+</head>
+
+<body ng-app>
+<table ng-init='products = [
+{"productId": 1,
+"productName": "Leaf Rake",
+"releaseDate": "March 19. 2009",
+"description": "Leaf rake with 48-inch handle",
+"code": 9.00,
+"price": 19.95,
+"category": "garden",
+"tags": ["leaf", "tool"],
+"imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous.com"
+},
+{"productId": 2,
+"productName": "Hammer",
+"releaseDate": "March 19. 2009",
+"description": "Leaf rake with 48-inch handle",
+"code": 9.00,
+"price": 19.95,
+"category": "garden",
+"tags": ["leaf", "tool"],
+"imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous.com"
+}
+]'>
+    <thead>
+    <tr>
+        <td>Image</td>
+        <td>Product</td>
+        <td>Code</td>
+        <td>Available</td>
+        <td>Price</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="product in products">
+        <td>
+            <img ng-src="{{product.imageUrl}}"
+                 style="width:50px;margin:2px"
+                 alt=""
+                 title="{{product.productName | currency}}"/>
+        </td>
+        <td>{{product.productName}}</td>
+        <td>{{product.code}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>
